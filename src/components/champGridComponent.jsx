@@ -1,23 +1,21 @@
-import { useState } from 'react'
+import Card from './card'
 
-const NameReturner = ({prop}) => <p className="my-4 pl-4 font-bold text-gray-500">{prop}</p>
-const DescriptionReturner = ({prop}) =>  <p className="mb-4 ml-4 text-xl font-semibold text-gray-800">{prop}</p>
-
-const Card = ({name,description}) => {
-    return(
-        <div className="max-w-60 cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
-            <img className="w-full rounded-lg object-cover object-center" src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="product" />
-            <NameReturner prop={name}/>
-            <DescriptionReturner prop={description}/>
-      </div>
-    )
+const getChamps = async () => {
+    const champs = await fetch('https://ddragon.leagueoflegends.com/cdn/12.4.1/data/en_US/champion.json')
+        .then(response => response.json())
+    
+    return champs
 }
-const ChampGridComponent = ({prop}) => {
+
+const ChampGridComponent =  async () => {
+   const campeon = await getChamps()
+   console.log(campeon) 
     return(
-        <div className="mt-8 flex mx-auto px-5">
-           <Card name="brand" description="champ 1"/>
-           <Card name="lulu" description="champ 2"/>
-           <Card name="bardo" description="champ 3"/>
+        <div className="mt-8 flex mx-auto px-5"> 
+            <p>buenas</p>   
+            {/* <Card name="brand" description="champ 1"/>
+            <Card name="lulu" description="champ 2"/>
+            <Card name="bardo" description="champ 3"/>  */}
         </div>
     )
 }

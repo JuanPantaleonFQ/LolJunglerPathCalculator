@@ -19,13 +19,13 @@ const NavBar = () =>{
                 <ul className="flex h-full flex-row items-center justify-between text-[16px] font-medium sm:text-[18px]">
                 {paths.map(path => {
                     if (path.name.toLowerCase() === "img") {
-                        return(<li className="hover:cursor-pointer text-white ml-4 mr-4">
+                        return(<li key={path.name} className="hover:cursor-pointer text-white ml-4 mr-4">
                         <a  target="_blank" href={path.reference}>
                          <img width="48" height="48" src={path.src} alt="league-of-legends"/>
                         </a>
                         </li>)                    
                     }else{
-                        return(<li className="hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-white hover:cursor-pointer text-white m-6 ">
+                        return(<li key={path.name} className="hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-white hover:cursor-pointer text-white m-6 ">
                             <a href={path.url}>{path.name}</a>
                          </li>)                        
                     }                                         
