@@ -12,7 +12,7 @@ const ChampGridComponent =  async () => {
    console.log(campeon) 
     return(
         <div className="mt-8 flex mx-auto px-5"> 
-            <p>buenas</p>   
+              
             {/* <Card name="brand" description="champ 1"/>
             <Card name="lulu" description="champ 2"/>
             <Card name="bardo" description="champ 3"/>  */}
