@@ -3,23 +3,27 @@ import  SearchBarResult  from "./SearchBarResult"
 import React from 'react'
 
 
-const SearchBar = ({champs}) =>{
+const SearchBar = ({sendDatatoParent,champs}) =>{
     const [newFilter,setNewFilter] = useState('')
     const champsFiltrados = champs.filter(campeon => campeon.name.toLowerCase().startsWith(newFilter.toLowerCase()));
     
-   
-   
     const handleInputChange = (e) => {
         setNewFilter(() => {
           const newSearchTerm = e.target.value; 
           return newSearchTerm                   
-        });                
+        });  
+                    
     };
-    console.log(champsFiltrados);
+
+    const handleSubmit = (e) =>{
+        e.preventDefault()
+        sendDatatoParent(newFilter)
+    }
+ 
     return(  
         <div className="">            
             <div className="flex justify-center mt-6 px-5">
-             <form className="sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">   
+             <form onSubmit={handleSubmit}className="sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5">   
                 <label htmlFor="search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-gray-300">Search</label>
                  <div className="relative">
                      <div className="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">

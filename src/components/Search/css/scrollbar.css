@@ -12,12 +12,3 @@
   border-radius: 6px; /* Roundness of the track */
 }
 
-.fade-in {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
-
-/* Add a utility class to trigger the transition */
-.fade-in.active {
-  opacity: 1;
-}

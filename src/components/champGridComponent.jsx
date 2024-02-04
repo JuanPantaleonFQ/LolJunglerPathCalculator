@@ -5,7 +5,7 @@ import SearchBar from './Search/searchBar'
 const ChampGridComponent = () => {
   const [champs, setChamps] = useState([]);
   const [champImg, setChampImg] = useState([])
-
+  
   useEffect(() => {
     const getChamps = async () => {
       try {
@@ -17,22 +17,26 @@ const ChampGridComponent = () => {
         console.error('Error fetching champions:', error);
       }
     };
-
     getChamps();
     
   }, []); 
-
+  const getDataFromSearchBar = (data) =>{
+    console.log("This is mi data:" ,data);
+    return data
+  }
+  if (getDataFromSearchBar == '') {
+    
+  }
 
   return (
-    <div  className='mx-8 '>
-      <SearchBar champs={champs}/>     
-      <div className="mt-8 flex justify-center mx-auto px-5 flex-wrap gap-5">
-        {champs.map((champ) => (
-        <Card key={champ.id} name={champ.name} description={champ.title} img={`https://ddragon.leagueoflegends.com/cdn/12.6.1/img/champion/${champ.image.full}`}  />
-        ))}
+      <div  className='mx-8 '>
+        <SearchBar sendDatatoParent={getDataFromSearchBar} champs={champs}/>     
+        <div className="mt-8 flex justify-center mx-auto px-5 flex-wrap gap-5">
+          {champs.map((champ) => (
+          <Card key={champ.id} name={champ.name} description={champ.title} img={`https://ddragon.leagueoflegends.com/cdn/12.6.1/img/champion/${champ.image.full}`}  />
+          ))}
+        </div>
       </div>
-    </div>
-
     )
 }
 
