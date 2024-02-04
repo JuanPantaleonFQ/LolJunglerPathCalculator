@@ -1,0 +1,23 @@
+.custom-scrollbar::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #fc6969; /* Thumb color */
+  border-radius: 6px; /* Roundness of the thumb */
+  border: 3px solid #ddd; /* Border color of the thumb */
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: #ddd; /* Track color */
+  border-radius: 6px; /* Roundness of the track */
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Add a utility class to trigger the transition */
+.fade-in.active {
+  opacity: 1;
+}
