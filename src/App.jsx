@@ -4,13 +4,15 @@ import ChampGridComponent from './components/champGridComponent'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  
   return (
-    <>
-      <NavBar/> 
-      <ChampGridComponent/> 
+      <div>
+        <NavBar/>       
+        <ChampGridComponent/> 
+      </div>
+      
               
-    </>
+    
   )
 }
 

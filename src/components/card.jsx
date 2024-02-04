@@ -4,8 +4,8 @@ const DescriptionReturner = ({prop}) =>  <p className="mb-4 ml-4 text-xl font-se
 
 
 const Card = ({name,description, img}) => {
-    return(
-        <div className="w-1/6 cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
+    return( //aqui es donde podemos cambiar el numero de tarjetas que se muestran (cambiando el with)
+        <div className="w-32 cursor-pointer rounded-lg bg-white p-2 shadow duration-150 hover:scale-105 hover:shadow-md">
             <img className="w-full rounded-lg object-cover object-center" src={img} alt="product" />
             <NameReturner prop={name}/>
             <DescriptionReturner prop={description}/>
