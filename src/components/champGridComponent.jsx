@@ -3,8 +3,8 @@ import Card from './Card';
 import SearchBar from './Search/searchBar'
 
 const ChampGridComponent = () => {
-  const [champs, setChamps] = useState([]);
-  const [champImg, setChampImg] = useState([])
+   const [champs, setChamps] = useState([]);
+   const [champImg, setChampImg] = useState([])
   
   useEffect(() => {
     const getChamps = async () => {
@@ -20,14 +20,15 @@ const ChampGridComponent = () => {
     getChamps();
     
   }, []); 
-  const getDataFromSearchBar = (data) =>{
-    console.log("This is mi data:" ,data);
-    return data
-  }
-  if (getDataFromSearchBar == '') {
-    
-  }
 
+  const getDataFromSearchBar = (data) =>{
+    if (data.length == 159) {
+      console.log("estan todos");
+    }else{
+      console.log("This is mi data:" ,data);
+    }     
+  }
+  
   return (
       <div  className='mx-8 '>
         <SearchBar sendDatatoParent={getDataFromSearchBar} champs={champs}/>     
