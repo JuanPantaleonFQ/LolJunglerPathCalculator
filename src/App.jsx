@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import NavBar from './components/navBarComponent'
 import ChampGridComponent from './components/champGridComponent'
 
@@ -6,7 +5,7 @@ import ChampGridComponent from './components/champGridComponent'
 function App() {
   
   return (
-      <div>
+      <div className='h-screen'>
         <NavBar/>       
         <ChampGridComponent/> 
       </div>
