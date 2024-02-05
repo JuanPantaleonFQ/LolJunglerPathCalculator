@@ -5,7 +5,7 @@ import SearchBar from './Search/searchBar'
 const ChampGridComponent = () => {
    const [champs, setChamps] = useState([]);
    const [searchData, setSearchData] = useState(champs);
-   //  const [champImg, setChampImg] = useState([])
+   
    
    useEffect(() => {
      const getChamps = async () => {
@@ -23,12 +23,15 @@ const ChampGridComponent = () => {
     }, []); 
 
     const getDataFromSearchBar = (data) => {
-      setSearchData(data);
+      setSearchData(data);//works
+    }
+    const getDataFromClikedSearched = (dataOnClick) =>{
+      setSearchData(dataOnClick)
     }
 
     return (
       <div className='mx-8 '>
-        <SearchBar sendDatatoParent={getDataFromSearchBar} champs={champs} />
+        <SearchBar sendDatatoParent={getDataFromSearchBar} sendDatatoParent2={getDataFromClikedSearched} champs={champs} />
         <div className="mt-8 flex justify-center mx-auto px-5 flex-wrap gap-5">
           {searchData.length === 0
             ? champs.map((champ) => (

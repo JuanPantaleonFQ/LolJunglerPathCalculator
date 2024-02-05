@@ -14,12 +14,15 @@ const SearchBar = ({sendDatatoParent,champs}) =>{
         });  
                     
     };
-
+    //working state to filter
     const handleSubmit = (e) =>{
         e.preventDefault()
         sendDatatoParent(champsFiltrados)
     }
+    //
  
+  
+
     return(  
         <div>            
             <div className="flex justify-center mt-6 px-5 relative">
