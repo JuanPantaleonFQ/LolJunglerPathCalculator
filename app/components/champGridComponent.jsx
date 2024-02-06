@@ -1,8 +1,9 @@
+"use client"
 import { useState, useEffect } from 'react';
 import Card from './Card';
 import SearchBar from './Search/searchBar'
 
-const ChampGridComponent = () => {
+export const ChampGridComponent = () => {
    const [champs, setChamps] = useState([]);
    const [searchData, setSearchData] = useState(champs);
    
@@ -54,5 +55,3 @@ const ChampGridComponent = () => {
       </div>
     );
   };
-
-export default ChampGridComponent;

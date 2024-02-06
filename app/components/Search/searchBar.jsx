@@ -1,3 +1,4 @@
+"use client"
 import { useState } from "react"
 import  SearchBarResult  from "./SearchBarResult"
 import React from 'react'
