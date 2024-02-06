@@ -4,7 +4,7 @@ import  SearchBarResult  from "./SearchBarResult"
 import React from 'react'
 
 
-const SearchBar = ({sendDatatoParent,champs}) =>{
+const SearchBar = ({sendDatatoParent,champs,sendDatatoParent2}) =>{
     const [newFilter,setNewFilter] = useState('')
     const champsFiltrados = champs.filter(campeon => campeon.name.toLowerCase().startsWith(newFilter.toLowerCase()));
     
@@ -21,7 +21,9 @@ const SearchBar = ({sendDatatoParent,champs}) =>{
         sendDatatoParent(champsFiltrados)
     }
     //
- 
+    const handleDataFromSearch = (data) =>{
+        sendDatatoParent2(data)
+    }
   
 
     return(  
@@ -40,7 +42,7 @@ const SearchBar = ({sendDatatoParent,champs}) =>{
              </form>                      
             </div>  
             <div className="flex justify-center ">
-             <SearchBarResult  newFilter={newFilter} props={champsFiltrados}/>
+             <SearchBarResult  getDataFromParentComponent={handleDataFromSearch} newFilter={newFilter} props={champsFiltrados}/>
             </div> 
                         
             
