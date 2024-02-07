@@ -2,9 +2,9 @@ import {ChampGridComponent} from './components/champGridComponent'
 
 function App() {  
   return (
-      <div className='h-screen'>
+      <main className='h-screen'>
         <ChampGridComponent/> 
-      </div>                        
+      </main>                        
   )
 }
 
