@@ -1,3 +1,4 @@
+"use client"
 import { useState, useEffect } from 'react';
 import Card from './Card';
 import SearchBar from './Search/searchBar'

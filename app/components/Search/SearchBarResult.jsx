@@ -1,4 +1,4 @@
-import React from 'react'
+"use client"
 import ResultComponent  from './resultComponent';
 import './css/scrollbar.css'
 
@@ -14,7 +14,6 @@ const SearchBarResult = ({ getDataFromParentComponent, newFilter , props }) => {
             </div>           
         )
     }
-  
 }
 
 export default SearchBarResult

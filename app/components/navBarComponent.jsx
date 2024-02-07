@@ -1,17 +1,18 @@
-import React from 'react'
+import Image from "next/image"
+import Link from "next/link"
 
-const NavBar = () =>{
+export const NavBar = () =>{
     const paths = [
         {name: "img",
-         url: "./home",
+         url: "/",
         src: "https://img.icons8.com/color/48/league-of-legends.png",
         reference: "https://icons8.com/"},
         
         {name: "Home",
-         url: "./home"},
+         url: "/"},
 
         {name: "Champs",
-         url: "./champs"}
+         url: "/champs"}
     ]
     return(
         <header className='flex justify-center'>
@@ -20,9 +21,9 @@ const NavBar = () =>{
                 {paths.map(path => {
                     if (path.name.toLowerCase() === "img") {
                         return(<li key={path.name} className="hover:cursor-pointer text-white ml-4 mr-4">
-                        <a  target="_blank" href={path.reference}>
-                         <img width="48" height="48" src={path.src} alt="league-of-legends"/>
-                        </a>
+                        <Link target="_blank" href={path.reference}>
+                         <Image width={40} height="48" src={path.src} alt="league-of-legends"/>
+                        </Link>
                         </li>)                    
                     }else{
                         return(<li key={path.name} className="hover:underline hover:underline-offset-2 hover:decoration-2 hover:decoration-white hover:cursor-pointer text-white m-6 ">
@@ -35,6 +36,5 @@ const NavBar = () =>{
       </header>        
     )
 }
-export default NavBar
 
 
