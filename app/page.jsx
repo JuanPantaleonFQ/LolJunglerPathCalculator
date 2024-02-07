@@ -1,4 +1,4 @@
-import {ChampGridComponent} from './components/champGridComponent'
+import ChampGridComponent from './components/champGridComponent'
 
 function App() {  
   return (
